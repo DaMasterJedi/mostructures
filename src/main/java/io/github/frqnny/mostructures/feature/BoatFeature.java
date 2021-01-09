@@ -32,8 +32,8 @@ public class BoatFeature extends Feature<DefaultFeatureConfig> {
             BlockPos newPos = world.getTopPosition(Heightmap.Type.WORLD_SURFACE_WG, pos);
             Structure structure = world.toServerWorld().getStructureManager().getStructureOrBlank(BOAT1);
             BlockRotation blockRotation = BlockRotation.random(random);
-            StructurePlacementData structurePlacementData = (new StructurePlacementData()).setMirror(BlockMirror.NONE).setRotation(blockRotation).setIgnoreEntities(false).setChunkPosition(null);
-            structure.place(world, newPos.add(0, -3, 0), structurePlacementData, random);
+            StructurePlacementData structurePlacementData = (new StructurePlacementData()).setMirror(BlockMirror.NONE).setRotation(blockRotation).setIgnoreEntities(false);
+            structure.place(world, newPos.add(0, -3, 0), newPos.add(0, -3, 0), structurePlacementData, random, 4);
         }
         return result;
     }

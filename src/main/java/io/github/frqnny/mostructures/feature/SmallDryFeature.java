@@ -49,9 +49,9 @@ public class SmallDryFeature extends Feature<DefaultFeatureConfig> {
 
             BlockPos newPos = world.getTopPosition(Heightmap.Type.OCEAN_FLOOR_WG, pos);
             BlockRotation blockRotation = BlockRotation.random(random);
-            StructurePlacementData structurePlacementData = (new StructurePlacementData()).setMirror(BlockMirror.NONE).setRotation(blockRotation).setIgnoreEntities(false).setChunkPosition(null);
+            StructurePlacementData structurePlacementData = (new StructurePlacementData()).setMirror(BlockMirror.NONE).setRotation(blockRotation).setIgnoreEntities(false);
 
-            structure.place(world, newPos, structurePlacementData, random);
+            structure.place(world, newPos, newPos, structurePlacementData, random, 4);
         }
 
         return result;
